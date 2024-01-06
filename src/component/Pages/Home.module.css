@@ -1,0 +1,79 @@
+.container{
+              background: #0f0c29;  /* fallback for old browsers */
+             background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+             background: linear-gradient(to right, #24243e, #302b63, #0f0c29); 
+              width: 100%;
+              height: 100vh;
+              clip-path: polygon(0 0, 100% 0, 100% 20%, 100% 80%, 100% 82%, 49% 64%, 0 81%, 0% 20%)
+}
+
+.glitch{
+font-size: 20px;
+color: #ffffff;
+animation: glitch 860ms infinite;
+font-weight: 700;
+text-transform: uppercase;
+position: relative;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+letter-spacing: 0.2rem;
+text-shadow: 0.05em 0 0 rgba(255, 0, 0, .75), -0.025em -.05em 0 rgba(0, 255, 0, .75), 0.025em .05em 0 rgba(0, 0, 255, .75);
+}
+.glitch2Bedore{
+font-size: 3rem;
+font-weight: 700;
+text-transform: uppercase;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+letter-spacing: 0.5rem;
+color: white;
+} @keyframes glitch{
+0%{
+text-shadow:
+0.05em 0 0 rgba(255, 0, 0, .75),
+-0.025em -.05em 0 rgba(0, 255, 0, .75),
+0.025em .05em 0 rgba(0, 0, 255, .75);
+}
+14%{
+text-shadow:
+0.05em 0 0 rgba(255, 0, 0, .75),
+-0.025em -.05em 0 rgba(0, 255, 0, .75),
+0.025em .05em 0 rgba(0, 0, 255, .75);
+}
+15%{
+text-shadow:
+-0.05em -.025em 0 rgba(255, 0, 0, .75),
+0.025em 0.025em 0 rgba(0, 255, 0, .75),
+-0.05em -.05em 0 rgba(0, 0, 255, .75);
+}
+49%{
+text-shadow:
+-0.05em -.025em 0 rgba(255, 0, 0, .75),
+0.025em 0.025em 0 rgba(0, 255, 0, .75),
+-0.05em -.05em 0 rgba(0, 0, 255, .75);
+}
+50%{
+text-shadow:
+0.025em 0.05em 0 rgba(255, 0, 0, .75),
+0.05em 0 0 rgba(0, 255, 0, .75),
+0 -0.05em 0 rgba(0, 0, 255, .75);
+}
+99%{
+text-shadow:
+0.025em 0.05em 0 rgba(255, 0, 0, .75),
+0.05em 0 0 rgba(0, 255, 0, .75),
+0 -0.05em 0 rgba(0, 0, 255, .75);
+}
+100%{
+text-shadow:
+-0.025em 0 0 rgba(255, 0, 0, .75),
+-0.025em -0.025em 0 rgba(0, 255, 0, .75),
+-0.025em -0.05em 0 rgba(0, 0, 255, .75);
+}
+}
+.containerGlitch{
+margin-top: 40px;
+width: 100%;
+max-width: 1175px;
+height: auto;
+}
