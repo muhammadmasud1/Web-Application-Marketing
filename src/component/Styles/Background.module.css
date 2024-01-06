@@ -1,0 +1,59 @@
+.background{
+background: #0f0c29;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+color: white;
+}
+
+.text {
+background: #CF6555;
+background: linear-gradient(to right, #F60002 0%, #CFCFCF 47%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+
+}
+
+.originalButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  border-radius: 0px;
+  width: 200px;
+  height: 40px;
+  position: relative;
+  transition: 0.3s;
+  overflow: hidden;
+}
+
+.originalButton::before, .originalButton::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  background-color: red;
+  transition: .3s;
+}
+
+.originalButton::before {
+  top: 0;
+}
+
+.originalButton::after {
+  bottom: 0;
+}
+
+.originalButton:hover::before {
+  transform: translateX(-100%);
+}
+
+.originalButton:hover::after {
+  transform: translateX(100%);
+}
