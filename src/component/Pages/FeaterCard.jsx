@@ -4,6 +4,7 @@ import { FaComment } from "react-icons/fa";
 import { FaShare } from "react-icons/fa";
 import { IoMdTime } from "react-icons/io";
 import { MdVerified } from "react-icons/md";
+import { Link } from 'react-router-dom';
 const FeaterCard = ({data}) => {
 
               const {id,image,name,description,time} = data;
@@ -30,11 +31,13 @@ const FeaterCard = ({data}) => {
                         </div>
                         <div className="card-actions justify-between my-5 items-center ">
                           <div>
-                            <button className={style.originalButton}>
-                              Details
-                            </button>
+                            <Link to={`postDetails/:${id}`}>
+                              <button className={style.originalButton}>
+                                <span className="text-gray-300">Details</span>
+                              </button>
+                            </Link>
                           </div>
-                          <div className="flex gap-5 cursor-pointer">
+                          <div className="flex gap-5 cursor-pointer text-gray-300">
                             <FcLike className="text-xl hover:scale-105 transition-all"></FcLike>
                             <FaComment className="text-xl hover:scale-105 transition-all"></FaComment>
                             <FaShare className="text-xl hover:scale-105 transition-all"></FaShare>

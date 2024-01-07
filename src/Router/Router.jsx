@@ -9,6 +9,7 @@ import Contact from "../component/Pages/Contact";
 import Login from "../component/Pages/Login";
 import Register from "../component/Pages/Register";
 import Featurepost from "../component/Pages/Featurepost";
+import PostDetails from "../component/Pages/PostDetails";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,11 @@ const router = createBrowserRouter([
       {
               path : '/register',
               element : <Featurepost></Featurepost>
+      }
+      ,
+      {
+            path : 'postDetails/:id',
+            element : <PostDetails></PostDetails>
       }
     ],
   },
