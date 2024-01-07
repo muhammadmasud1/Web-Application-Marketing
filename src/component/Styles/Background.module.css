@@ -57,3 +57,46 @@ background: linear-gradient(to right, #F60002 0%, #CFCFCF 47%);
 .originalButton:hover::after {
   transform: translateX(100%);
 }
+.originalButton1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  text-decoration: none;
+  color: #e31414;
+  font-size: 18px;
+  border-radius: 0px;
+  width: 150px;
+  height: 40px;
+  position: relative;
+  transition: 0.3s;
+  overflow: hidden;
+  font-weight: 600;
+}
+
+.originalButton1::before, .originalButton1::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  background-color: red;
+  transition: .3s;
+}
+
+.originalButton1::before {
+  top: 0;
+}
+
+.originalButton1::after {
+  bottom: 0;
+}
+
+.originalButton1:hover::before {
+  transform: translateX(-100%);
+}
+
+.originalButton1:hover::after {
+  transform: translateX(100%);
+}

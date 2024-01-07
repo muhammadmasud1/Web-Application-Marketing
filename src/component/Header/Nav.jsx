@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import styles from '../Styles/Background.module.css'
 const Nav = () => {
           
@@ -125,7 +125,11 @@ const Nav = () => {
                         </ul>
                       </div>
                       <div className="navbar-end">
-                        <button className={styles.originalButton}>Login</button>
+                        <Link to='login'>
+                          <button className={styles.originalButton}>
+                            Login
+                          </button>
+                        </Link>
                       </div>
                     </div>
                   </div>
