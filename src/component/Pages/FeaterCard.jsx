@@ -31,7 +31,7 @@ const FeaterCard = ({data}) => {
                         </div>
                         <div className="card-actions justify-between my-5 items-center ">
                           <div>
-                            <Link to={`/postDetails/:${id}`}>
+                            <Link to={`/postDetails/${id}`}>
                               <button className={style.originalButton}>
                                 <span className="text-gray-300">Details</span>
                               </button>

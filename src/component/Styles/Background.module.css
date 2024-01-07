@@ -121,3 +121,23 @@ background: linear-gradient(to right, #F60002 0%, #CFCFCF 47%);
 .originalButton1:hover::after {
   transform: translateX(100%);
 }
+
+
+.containerimg {
+
+  width: 100%;
+  height: 100%;
+  background-image: url(https://i.ibb.co/WDV1LC4/Adobe-Stock-206435606-Preview.jpg);
+}
+.card2{
+background: rgba( 255, 255, 255, 0 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 20px );
+-webkit-backdrop-filter: blur( 20px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+                    }
+.card2:hover{
+  border: 1px solid white;
+  transition: 0.5s all ease;
+}
