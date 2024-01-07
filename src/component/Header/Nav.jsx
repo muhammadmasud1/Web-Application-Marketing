@@ -108,19 +108,19 @@ const Nav = () => {
                           </div>
                           <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+                            className="menu menu-sm bg-black dropdown-content mt-3 z-[1] p-2 shadow  rounded-box w-52"
                           >
                             {navLinks}
                           </ul>
                         </div>
-                        <a className="btn btn-ghost text-2xl">
+                        <a className="btn btn-ghost text-2xl hidden sm:inline-block">
                           <span className={styles.text}>
                             Eleventor Concepts
                           </span>
                         </a>
                       </div>
                       <div className="navbar-center hidden lg:flex">
-                        <ul className="menu menu-horizontal px-1">
+                        <ul className="menu menu-horizontal px-1 ">
                           {navLinks}
                         </ul>
                       </div>

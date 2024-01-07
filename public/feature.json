@@ -1,0 +1,97 @@
+[
+  {
+    "id": 1,
+    "image": "https://i.ibb.co/cKByvxJ/pexels-simon-robben-977796.jpg",
+    "name": "CodeMasterX",
+    "description": "Passionate coder specializing in web development and design. Expert in HTML, CSS, and JavaScript.",
+    "time": "08:00 AM"
+  },
+  {
+    "id": 2,
+    "image": "https://i.ibb.co/jTSGFn3/pexels-simon-robben-905375.jpg",
+    "name": "ByteNinja",
+    "description": "Software architect with a focus on scalable solutions. Proficient in Python, Java, and cloud technologies.",
+    "time": "12:30 PM"
+  },
+  {
+    "id": 3,
+    "image": "https://i.ibb.co/TbKhbP3/pexels-jeffrey-reed-769733.jpg",
+    "name": "DataWizard",
+    "description": "Data scientist crunching numbers for valuable insights. Skilled in Python, R, and machine learning.",
+    "time": "03:45 PM"
+  },
+  {
+    "id": 4,
+    "image": "https://i.ibb.co/TvZShjs/pexels-fernanda-latronico-709188.jpg",
+    "name": "BugHunter",
+    "description": "Quality assurance expert ensuring flawless code. Master of testing frameworks and automation.",
+    "time": "10:15 AM"
+  },
+  {
+    "id": 5,
+    "image": "https://i.ibb.co/9h9zTq3/pexels-chloe-1043473.jpg",
+    "name": "UI_Magician",
+    "description": "Front-end developer crafting delightful user interfaces. Proficient in React, Vue, and CSS frameworks.",
+    "time": "05:00 PM"
+  },
+  {
+    "id": 6,
+    "image": "https://i.ibb.co/Bng7vWc/pexels-christina-morillo-1181391.jpg",
+    "name": "DevOps_Guru",
+    "description": "DevOps engineer streamlining development workflows. Expertise in Docker, Kubernetes, and CI/CD.",
+    "time": "09:45 AM"
+  },
+  {
+    "id": 7,
+    "image": "https://i.ibb.co/hMPTsPm/pexels-linkedin-sales-navigator-2182970.jpg",
+    "name": "CodeFashionista",
+    "description": "Full-stack developer merging functionality with style. Fluent in Node.js, Express, and MongoDB.",
+    "time": "02:20 PM"
+  },
+  {
+    "id": 8,
+    "image": "https://i.ibb.co/BwNqvN2/pexels-justin-shaifer-1222271.jpg",
+    "name": "AI_Enthusiast",
+    "description": "Artificial intelligence researcher exploring the frontiers of machine learning. Proficient in TensorFlow and Python.",
+    "time": "11:30 AM"
+  },
+  {
+    "id": 9,
+    "image": "https://i.ibb.co/54B190t/pexels-nitin-khajotia-1516680.jpg",
+    "name": "Codepreneur",
+    "description": "Entrepreneurial developer shaping innovative solutions. Experienced in startups and agile methodologies.",
+    "time": "01:05 PM"
+  },
+  {
+    "id": 10,
+    "image": "https://i.ibb.co/TbKhbP3/pexels-jeffrey-reed-769733.jpg",
+    "name": "HackathonHero",
+    "description": "Competitive coder with a knack for solving complex problems. Multiple hackathon champion.",
+    "time": "04:40 PM"
+  },
+  {
+    "id": 11,
+    "image": "https://i.ibb.co/cKByvxJ/pexels-simon-robben-977796.jpg",
+    "name": "CodeExplorer",
+    "description": "Tech explorer delving into new languages and frameworks. Enthusiastic about continuous learning.",
+    "time": "06:15 PM"
+  },
+  {
+    "id": 12,
+    "image": "https://i.ibb.co/Bng7vWc/pexels-christina-morillo-1181391.jpg",
+    "name": "SyntaxMaestro",
+    "description": "Master of coding syntax, teaching and mentoring others. Passionate about knowledge sharing.",
+    "time": "07:00 AM"
+  }
+]
+
+
+
+
+
+
+
+
+
+
+

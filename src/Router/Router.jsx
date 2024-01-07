@@ -8,6 +8,7 @@ import About from "../component/Pages/About";
 import Contact from "../component/Pages/Contact";
 import Login from "../component/Pages/Login";
 import Register from "../component/Pages/Register";
+import Featurepost from "../component/Pages/Featurepost";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
               path : '/register',
               element : <Register></Register>
+      },
+      {
+              path : '/register',
+              element : <Featurepost></Featurepost>
       }
     ],
   },

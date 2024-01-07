@@ -9,7 +9,7 @@ const Login = () => {
                         <h1 className="text-3xl">Hello</h1>
                         <p className="text-5xl font-extrabold">Welcome!</p>
                       </div>
-                      <div className="bg-white w-full md:w-1/2 flex flex-col items-center py-32 px-8">
+                      <div className="bg-white w-full md:w-1/2 flex flex-col items-center py-16 px-8">
                         <h3 className="text-3xl font-bold text-[#e31414] mb-4">
                           LOGIN
                         </h3>
