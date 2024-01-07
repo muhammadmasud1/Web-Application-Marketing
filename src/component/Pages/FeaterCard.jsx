@@ -1,4 +1,7 @@
 import style from '../Styles/Background.module.css'
+import { FcLike } from "react-icons/fc";
+import { FaComment } from "react-icons/fa";
+import { FaShare } from "react-icons/fa";
 const FeaterCard = ({data}) => {
 
               const {id,image,name,description,time} = data;
@@ -17,12 +20,14 @@ const FeaterCard = ({data}) => {
                         <h2 className="card-title">{name}</h2>
                         <p>{description}</p>
                         <p>{time}</p>
-                        <div className="card-actions ">
+                        <div className="card-actions justify-between my-5 items-center ">
                           <div>
-                            <button className="btn btn-primary">Buy Now</button>
-                            <div>
-                                          
-                            </div>
+                            <button className={style.originalButton}>Details</button>
+                          </div>
+                          <div className="flex gap-5 cursor-pointer">
+                            <FcLike  className='text-xl hover:scale-105 transition-all'></FcLike>
+                            <FaComment className='text-xl hover:scale-105 transition-all'></FaComment>
+                            <FaShare className='text-xl hover:scale-105 transition-all'></FaShare>
                           </div>
                         </div>
                       </div>
