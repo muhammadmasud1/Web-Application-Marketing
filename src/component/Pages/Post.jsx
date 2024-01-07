@@ -1,5 +1,11 @@
+import Featurepost from "./Featurepost";
+
 const Post = () => {
-  return <div>post</div>;
+  return (
+    <>
+    <Featurepost></Featurepost>
+    </>
+  )
 };
 
 export default Post;
