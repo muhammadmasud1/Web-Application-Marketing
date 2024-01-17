@@ -1,5 +1,7 @@
 
 import { initializeApp } from "firebase/app";
+import { getAuth, FacebookAuthProvider } from "firebase/auth";
+
 const firebaseConfig = {
   apiKey: "AIzaSyBUiiXWCw5RDJqQqGrxJmUfkHHsDQokZ3c",
   authDomain: "concpets-2570c.firebaseapp.com",
@@ -8,5 +10,9 @@ const firebaseConfig = {
   messagingSenderId: "934931763309",
   appId: "1:934931763309:web:26aeecf37be5855377af64",
 };
+
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export default app;
+const auth = getAuth(app)
+const provider = new FacebookAuthProvider();
+export  {auth,provider}
