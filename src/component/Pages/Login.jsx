@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import style from "../Styles/Background.module.css";
 import { FaGoogle, FaFacebook } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
 import {
   FacebookAuthProvider,
   getAuth,
@@ -149,7 +149,7 @@ const Login = () => {
                   </button>
                   <button className="text-red-600 text-[25px] hover:scale-105 transition-all hover:text-fuchsia-500">
                     <span>
-                      <FaInstagram></FaInstagram>
+                      <FaTwitter></FaTwitter>
                     </span>
                   </button>
                 </div>
