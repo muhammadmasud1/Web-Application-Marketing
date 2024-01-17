@@ -6,10 +6,8 @@ import { FaComment } from "react-icons/fa";
 import { FaShare } from "react-icons/fa";
 import { IoMdTime } from "react-icons/io";
 import { MdVerified } from "react-icons/md";
-
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
 const notify = () =>
   toast.success("Thanks For Love", {
     position: "top-center",
@@ -21,30 +19,25 @@ const notify = () =>
     progress: undefined,
     theme: "light",
   });
-
 const PostDetails = () => {
   const [dataPost, setDataPost] = useState([]);
   const { id } = useParams();
-
   useEffect(() => {
     fetch("/feature.json")
       .then((res) => res.json())
       .then((data) => setDataPost(data));
   }, []);
-
   const findData = dataPost.find((data) => data.id == id);
-
   // Check if findData exists before accessing its properties
   if (!findData) {
     return <p>Loading...</p>; // Add a loading indicator or handle the case differently
   }
-
   return (
     <div className={style.backgroundImages}>
-      <div className="w-full h-screen">
-        <div className="flex justify-center items-center py-20">
+      <div className="w-full h-screen ">
+        <div className="flex justify-center px-6 items-center py-20">
           <div className={style.card}>
-            <div className="card w-[400px]   shadow-xl">
+            <div className="card w-[390px]  px-5 shadow-xl">
               <figure>
                 <img
                   className="rounded-full my-5 text w-36 h-36 object-cover"

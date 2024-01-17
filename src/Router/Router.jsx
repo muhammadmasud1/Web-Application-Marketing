@@ -10,6 +10,7 @@ import Login from "../component/Pages/Login";
 import Register from "../component/Pages/Register";
 import Featurepost from "../component/Pages/Featurepost";
 import PostDetails from "../component/Pages/PostDetails";
+import Dashboard from "../Root/Dashboard/Dashboard";
 
 const router = createBrowserRouter([
   {
@@ -56,5 +57,11 @@ const router = createBrowserRouter([
       }
     ],
   },
+
+  /* =============create dashboard tamplate and configuration =================*/
+    {
+        path : 'dashboard',
+        element : <Dashboard></Dashboard>
+    }
 ]);
 export default router

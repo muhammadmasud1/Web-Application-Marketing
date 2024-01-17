@@ -1,7 +1,7 @@
 import { Link, NavLink } from 'react-router-dom';
 import styles from '../Styles/Background.module.css'
 const Nav = () => {
-          
+          const isDashboard = true
               const navLinks = (
                 <>
                   <li className="text-xl text-white">
@@ -74,6 +74,21 @@ const Nav = () => {
                       Contact
                     </NavLink>
                   </li>
+                  {isDashboard ? <li className="text-xl">
+                    <NavLink
+                      to="/dashboard"
+                      className={({ isActive, isPending }) =>
+                        isPending
+                          ? "pending"
+                          : isActive
+                          ? "border-b border-b-red-600 outline-none"
+                          : ""
+                      }
+                    >
+                      Dashboard
+                    </NavLink>
+                  </li> : ''}
+                  
                 </>
               );
               
