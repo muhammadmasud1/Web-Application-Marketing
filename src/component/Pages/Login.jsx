@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import style from '../Styles/Background.module.css'
 import { FaGithub } from "react-icons/fa";
+import { FaGoogle } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa6";
 import { getAuth, signInWithPopup } from "firebase/auth";
 import app from '../../googleFirebase';
 import { GoogleAuthProvider } from "firebase/auth";
@@ -74,10 +76,10 @@ const Login = () => {
                               <Link to="/">
                                 <button
                                   onClick={googleLogin}
-                                  className="flex items-center justify-center gap-4 py-3"
+                                  className="flex items-center justify-center gap-4 py-2"
                                 >
                                   <span className="text-[30px] text-white">
-                                    <FaGithub />
+                                    <FaGoogle></FaGoogle>
                                   </span>
                                   <h3 className="font-semibold">
                                     Login With Google
@@ -86,9 +88,9 @@ const Login = () => {
                               </Link>
                             </div>
                             <div className="flex items-center justify-center bg-red-600 rounded-lg my-3 ">
-                              <button className="flex items-center justify-center gap-4 py-3">
+                              <button className="flex items-center justify-center gap-4 py-2">
                                 <span className="text-[30px] text-white">
-                                  <FaGithub />
+                                  <FaFacebook></FaFacebook>
                                 </span>
                                 <h3 className="font-semibold">
                                   Login With Facebook
