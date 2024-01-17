@@ -1,26 +1,32 @@
-// Import necessary modules and components
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import style from "../Styles/Background.module.css";
 import { FaGoogle, FaFacebook } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 import {
   FacebookAuthProvider,
   getAuth,
   GoogleAuthProvider,
   signInWithPopup,
+  GithubAuthProvider,
 } from "firebase/auth";
-import app from "../../googleFirebase"; 
-import { auth } from "../../fbFirebase"; 
+
+import app from "../../googleFirebase";
+import { auth as fbAuth } from "../../fbFirebase";
+import { auth as githubAuth } from "../../githubFirebase";
+
 const Login = () => {
   const googleAuth = getAuth(app);
   const googleProvider = new GoogleAuthProvider();
-
-  const facebookAuth = getAuth(); 
+  const facebookAuth = getAuth();
   const facebookProvider = new FacebookAuthProvider();
+  const githubAuth = getAuth();
 
   // State for user
   const [user, setUser] = useState(null);
- console.log(user)
+  console.log(user);
+
   // Google login function
   const googleLogin = () => {
     signInWithPopup(googleAuth, googleProvider)
@@ -45,6 +51,17 @@ const Login = () => {
       });
   };
 
+  // GitHub login function
+  const githubLogin = () => {
+    signInWithPopup(githubAuth, new GithubAuthProvider())
+      .then((result) => {
+        console.log(result.user);
+        setUser(result.user);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
   return (
     <div className={style.background}>
       <div className=" h-screen w-full flex justify-center items-center">
@@ -54,11 +71,11 @@ const Login = () => {
               {user ? (
                 <>
                   <img
-                    className="text-center inline-flex justify-center items-center rounded-full my-3"
+                    className="text-center max-w-28 inline-flex justify-center items-center rounded-full my-3"
                     src={user.photoURL}
                     alt=""
                   />
-                  <h1 className="text-3xl"> {user.displayName}</h1>
+                  <h1 className="text-2xl"> {user.displayName}</h1>
                   <p className="text-5xl font-extrabold">Welcome!</p>
                 </>
               ) : (
@@ -100,27 +117,40 @@ const Login = () => {
                 </div>
               </Link>
               <div className="text-center">
-                <div className="flex items-center justify-center bg-red-600 rounded-lg">
+                <div className="flex items-center gap-4 justify-center">
+                  <div className="w-full h-1 bg-red-800"></div>
+                  <h4 className="text-red-500">OR</h4>
+                  <div className="w-full h-1 bg-red-800"></div>
+                </div>
+                <div className="flex items-center justify-center gap-4 my-5 ">
                   <button
                     onClick={googleLogin}
-                    className="flex items-center justify-center gap-4 py-2"
+                    className="text-red-600 text-[25px] hover:scale-105 transition-all hover:text-fuchsia-500"
                   >
-                    <span className="text-[30px] text-white">
+                    <span>
                       <FaGoogle></FaGoogle>
                     </span>
-                    <h3 className="font-semibold">Login With Google</h3>
                   </button>
-                </div>
-
-                <div
-                  onClick={facebookLogin}
-                  className="flex items-center justify-center bg-red-600 rounded-lg my-3"
-                >
-                  <button className="flex items-center justify-center gap-4 py-2">
-                    <span className="text-[30px] text-white">
+                  <button
+                    onClick={facebookLogin}
+                    className="text-red-600 text-[25px] hover:scale-105 transition-all hover:text-fuchsia-500"
+                  >
+                    <span>
                       <FaFacebook></FaFacebook>
                     </span>
-                    <h3 className="font-semibold">Login With Facebook</h3>
+                  </button>
+                  <button
+                    onClick={githubLogin}
+                    className="text-red-600 text-[25px] hover:scale-105 transition-all hover:text-fuchsia-500"
+                  >
+                    <span>
+                      <FaGithub></FaGithub>
+                    </span>
+                  </button>
+                  <button className="text-red-600 text-[25px] hover:scale-105 transition-all hover:text-fuchsia-500">
+                    <span>
+                      <FaInstagram></FaInstagram>
+                    </span>
                   </button>
                 </div>
               </div>
