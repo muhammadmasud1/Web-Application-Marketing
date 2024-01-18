@@ -1,7 +1,34 @@
 import { Link } from "react-router-dom";
 import style from "../Styles/Background.module.css";
+import { authentication } from "../../twitterFirebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 const Register = () => {
+          
+
+
+              const handleRegisterForm = (event) => {
+                      event.preventDefault()
+                      const name = event.target.name.value;
+                      const email = event.target.email.value;
+                      const number = event.target.number.value;
+                      const password = event.target.password.value;
+                      /* console.log(name,email,number,password) */
+                    createUserWithEmailAndPassword(authentication, email, password,name,number)
+                    .then(result => {
+                      console.log(result.user)
+                    }).catch((error) => {
+                      console.log(error.message)
+                    })
+
+
+              }
+
+
+
+
+
+
               return (
                 <div>
                   <div className={style.background}>
@@ -15,7 +42,7 @@ const Register = () => {
                           <h3 className="text-3xl font-bold text-[#e31414] mb-4">
                             Register
                           </h3>
-                          <form
+                          <form onSubmit={handleRegisterForm}
                             action="#"
                             className="w-full flex flex-col justify-center"
                           >
@@ -23,6 +50,7 @@ const Register = () => {
                               <input
                                 type="text"
                                 placeholder="Name"
+                                name="name"
                                 className="required mb-4 appearance-none w-full p-3 rounded border placeholder-black focus:outline-none text-black focus:border-red-600"
                               />
                               <div >
@@ -36,6 +64,7 @@ const Register = () => {
                                 <input
                                   type="email"
                                   placeholder="Email"
+                                  name="email"
                                   className="required appearance-none w-full p-3 rounded border placeholder-black focus:outline-none text-black focus:border-red-600"
                                 />
                               </div>
@@ -44,16 +73,17 @@ const Register = () => {
                               <input
                                 type="password"
                                 placeholder="Password"
+                                name="password"
                                 className="required appearance-none w-full p-3 rounded border placeholder-black focus:outline-none text-black focus:border-red-600"
                               />
                             </div>
-                            <Link to="/login">
+                            
                               <div className="flex mb-5 justify-center items-center text-red-600">
-                                <button className={style.originalButton1}>
+                                <button  type="submit" className={style.originalButton1}>
                                   Submit
                                 </button>
                               </div>
-                            </Link>
+                           
                             <div>
                               <p className="text-black text-center ">
                                 Already have an account?{" "}

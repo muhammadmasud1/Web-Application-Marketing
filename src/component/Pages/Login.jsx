@@ -9,7 +9,8 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   GithubAuthProvider,
-  TwitterAuthProvider
+  TwitterAuthProvider,
+  signInWithEmailAndPassword
 } from "firebase/auth";
 import { authentication } from "../../twitterFirebase";
 import { githubAuth } from "../../githubFirebase";
@@ -21,7 +22,7 @@ const Login = () => {
 
   // State for user
   const [user, setUser] = useState(null);
-  console.log(user);
+  /* console.log(user); */
 
 // Google Login Funciton
   const googleLogin = () => {
@@ -68,8 +69,28 @@ const Login = () => {
     console.log(result.message)
   })
  }
-
  // 4 way function firebase
+
+// form onSubmit Function 
+
+const handleForm = (event) => {
+  event.preventDefault();
+  const email = event.target.email.value;
+  const password = event.target.password.value;
+  signInWithEmailAndPassword(authentication,email,password)
+  .then(result => {
+    console.log(result.user)
+     setUser(result.user);
+  }).catch((error) => {
+    console.log(error.message)
+  })
+  
+};
+
+// Login Function Firebase
+
+
+
   return (
     <div className={style.background}>
       <div className=" h-screen w-full flex justify-center items-center">
@@ -96,34 +117,42 @@ const Login = () => {
           </div>
           <div className="bg-white w-full md:w-1/2 flex flex-col items-center py-16 px-8">
             <h3 className="text-3xl font-bold text-[#e31414] mb-4">LOGIN</h3>
-            <form action="#" className="w-full flex flex-col justify-center">
+            <form
+              onSubmit={handleForm}
+              action="#"
+              className="w-full flex flex-col justify-center form-control"
+            >
               <div className="mb-4">
                 <input
                   type="email"
+                  name="email"
                   placeholder="Email"
+                  
                   className="required appearance-none w-full p-3 rounded border placeholder-black focus:outline-none text-black focus:border-red-600"
                 />
               </div>
               <div className="mb-5">
                 <input
                   type="password"
+                  name="password"
                   placeholder="Password"
+                 
                   className="required appearance-none w-full p-3 rounded border placeholder-black focus:outline-none text-black focus:border-red-600"
                 />
                 <Link>
                   <p className="text-red-600 px-1">Forget Password</p>
                 </Link>
               </div>
-              <Link to="/">
+             
                 <div className="flex mb-5 justify-center items-center text-red-600">
                   <button
-                    /*     onClick={signInWithGoogle} */
-                    className={style.originalButton1}
+                    
+                    type="submit" className={style.originalButton1}
                   >
                     Submit
                   </button>
                 </div>
-              </Link>
+             
               <div className="text-center">
                 <div className="flex items-center gap-4 justify-center">
                   <div className="w-full h-1 bg-red-800"></div>
