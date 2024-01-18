@@ -80,6 +80,7 @@ const Login = () => {
   })
  }
 
+ // 4 way function firebase
 
   return (
     <div className={style.background}>
