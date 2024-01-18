@@ -16,7 +16,7 @@ import { authentication } from "../../twitterFirebase";
 import { githubAuth } from "../../githubFirebase";
 import { facebookAuth } from "../../fbFirebase";
 import { googleAuth } from "../../googleFirebase";
-
+import Swal from "sweetalert2";
 
 const Login = () => {
 
@@ -81,8 +81,22 @@ const handleForm = (event) => {
   .then(result => {
     console.log(result.user)
      setUser(result.user);
+     Swal.fire({
+       position: "center",
+       icon: "success",
+       title: "Your Login Successfully",
+       showConfirmButton: false,
+       timer: 1500,
+     });
   }).catch((error) => {
     console.log(error.message)
+    Swal.fire({
+      position: "center",
+      icon: "error",
+      title: 'Please Register Now',
+      showConfirmButton: false,
+      timer: 1500,
+    });
   })
   
 };

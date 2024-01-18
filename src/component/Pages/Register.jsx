@@ -2,9 +2,11 @@ import { Link } from "react-router-dom";
 import style from "../Styles/Background.module.css";
 import { authentication } from "../../twitterFirebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import Swal from "sweetalert2";
+
 
 const Register = () => {
-          
+         
 
 
               const handleRegisterForm = (event) => {
@@ -17,8 +19,23 @@ const Register = () => {
                     createUserWithEmailAndPassword(authentication, email, password,name,number)
                     .then(result => {
                       console.log(result.user)
+                      
+                      Swal.fire({
+                        position: "center",
+                        icon: "success",
+                        title: "Successfully",
+                        showConfirmButton: false,
+                        timer: 1500,
+                      });
                     }).catch((error) => {
                       console.log(error.message)
+                      Swal.fire({
+                        position: "center",
+                        icon: "error",
+                        title: "Already Account Create",
+                        showConfirmButton: false,
+                        timer: 1500,
+                      });
                     })
 
 
