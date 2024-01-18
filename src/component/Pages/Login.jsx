@@ -10,8 +10,13 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   GithubAuthProvider,
+  TwitterAuthProvider
 } from "firebase/auth";
 
+
+
+
+import { authentication } from "../../twitterFirebase";
 import app from "../../googleFirebase";
 import { auth as fbAuth } from "../../fbFirebase";
 import { auth as githubAuth } from "../../githubFirebase";
@@ -62,6 +67,20 @@ const Login = () => {
         console.log(error.message);
       });
   };
+ // Twitter Login Function
+
+ const twitterLogin = () => {
+  const provider = new TwitterAuthProvider();
+  signInWithPopup(authentication,provider)
+  .then(result => {
+    console.log(result.user)
+    setUser(result.user)
+  }).catch((result) => {
+    console.log(result.message)
+  })
+ }
+
+
   return (
     <div className={style.background}>
       <div className=" h-screen w-full flex justify-center items-center">
@@ -147,7 +166,10 @@ const Login = () => {
                       <FaGithub></FaGithub>
                     </span>
                   </button>
-                  <button className="text-red-600 text-[25px] hover:scale-105 transition-all hover:text-fuchsia-500">
+                  <button
+                    onClick={twitterLogin}
+                    className="text-red-600 text-[25px] hover:scale-105 transition-all hover:text-fuchsia-500"
+                  >
                     <span>
                       <FaTwitter></FaTwitter>
                     </span>
