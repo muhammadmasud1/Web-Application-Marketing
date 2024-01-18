@@ -1,5 +1,6 @@
 
 import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 const firebaseConfig = {
   apiKey: "AIzaSyBUiiXWCw5RDJqQqGrxJmUfkHHsDQokZ3c",
   authDomain: "concpets-2570c.firebaseapp.com",
@@ -9,4 +10,4 @@ const firebaseConfig = {
   appId: "1:934931763309:web:26aeecf37be5855377af64",
 };
 const app = initializeApp(firebaseConfig);
-export default app;
+export const googleAuth = getAuth(app)

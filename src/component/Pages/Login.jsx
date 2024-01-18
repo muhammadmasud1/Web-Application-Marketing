@@ -6,69 +6,58 @@ import { FaGithub } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import {
   FacebookAuthProvider,
-  getAuth,
   GoogleAuthProvider,
   signInWithPopup,
   GithubAuthProvider,
   TwitterAuthProvider
 } from "firebase/auth";
-
-
-
-
 import { authentication } from "../../twitterFirebase";
-import app from "../../googleFirebase";
-import { auth as fbAuth } from "../../fbFirebase";
-import { auth as githubAuth } from "../../githubFirebase";
+import { githubAuth } from "../../githubFirebase";
+import { facebookAuth } from "../../fbFirebase";
+import { googleAuth } from "../../googleFirebase";
+
 
 const Login = () => {
-  const googleAuth = getAuth(app);
-  const googleProvider = new GoogleAuthProvider();
-  const facebookAuth = getAuth();
-  const facebookProvider = new FacebookAuthProvider();
-  const githubAuth = getAuth();
 
   // State for user
   const [user, setUser] = useState(null);
   console.log(user);
 
-  // Google login function
+// Google Login Funciton
   const googleLogin = () => {
-    signInWithPopup(googleAuth, googleProvider)
-      .then((result) => {
-        console.log(result.user);
-        setUser(result.user);
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
-  };
-
-  // Facebook login function
-  const facebookLogin = () => {
-    signInWithPopup(facebookAuth, facebookProvider)
-      .then((result) => {
-        console.log(result.user);
-        setUser(result.user);
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
-  };
-
+    const provider = new GoogleAuthProvider()
+    signInWithPopup(googleAuth, provider)
+    .then(result => {
+      console.log(result.user)
+      setUser(result.user)
+    }).catch((error) => {
+      console.log(error.message)
+    })
+  }
+  
+  // facebook Login Function
+   const facebookLogin = () => {
+    const provider = new FacebookAuthProvider();
+    signInWithPopup(facebookAuth, provider)
+    .then(result => {
+      console.log(result.user)
+      setUser(result.user)
+    }).catch((error) => {
+      console.log(error.message)
+    })
+   }
   // GitHub login function
   const githubLogin = () => {
-    signInWithPopup(githubAuth, new GithubAuthProvider())
-      .then((result) => {
-        console.log(result.user);
-        setUser(result.user);
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
-  };
+    const provider = new GithubAuthProvider();
+    signInWithPopup(githubAuth , provider)
+    .then(result => {
+      console.log(result.user)
+      setUser(result.user)
+    }).catch((result) => {
+      console.log(result.message)
+    })
+  }
  // Twitter Login Function
-
  const twitterLogin = () => {
   const provider = new TwitterAuthProvider();
   signInWithPopup(authentication,provider)
@@ -81,7 +70,6 @@ const Login = () => {
  }
 
  // 4 way function firebase
-
   return (
     <div className={style.background}>
       <div className=" h-screen w-full flex justify-center items-center">
