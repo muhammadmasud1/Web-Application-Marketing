@@ -88,9 +88,6 @@ const handleForm = (event) => {
        showConfirmButton: false,
        timer: 1500,
      });
-  }).catch((error) => {
-    console.log(error.message)
-
   })
   
 };
