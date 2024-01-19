@@ -94,7 +94,7 @@ const handleForm = (event) => {
       position: "center",
       icon: "error",
       title: 'Please Register Now',
-      showConfirmButton: false,
+      showConfirmButton: true,
       timer: 1500,
     });
   })
