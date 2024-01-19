@@ -90,13 +90,7 @@ const handleForm = (event) => {
      });
   }).catch((error) => {
     console.log(error.message)
-    Swal.fire({
-      position: "center",
-      icon: "error",
-      title: 'Please Register Now',
-      showConfirmButton: true,
-      timer: 1500,
-    });
+
   })
   
 };
