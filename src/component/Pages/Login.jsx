@@ -31,8 +31,25 @@ const Login = () => {
     .then(result => {
       console.log(result.user)
       setUser(result.user)
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Congratulation",
+        showConfirmButton: true,
+        timer: 1500,
+      });
+      
     }).catch((error) => {
-      console.log(error.message)
+      if (!user) {
+        console.log(error.message);
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Congratulation",
+          showConfirmButton: true,
+          timer: 1500,
+        });
+      }
     })
   }
   

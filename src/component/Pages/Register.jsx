@@ -3,12 +3,7 @@ import style from "../Styles/Background.module.css";
 import { authentication } from "../../twitterFirebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import Swal from "sweetalert2";
-
-
 const Register = () => {
-         
-
-
               const handleRegisterForm = (event) => {
                       event.preventDefault()
                       const name = event.target.name.value;
@@ -37,15 +32,7 @@ const Register = () => {
                         timer: 1500,
                       });
                     })
-
-
               }
-
-
-
-
-
-
               return (
                 <div>
                   <div className={style.background}>
