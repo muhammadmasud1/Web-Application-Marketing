@@ -4,13 +4,16 @@ import style from "../Styles/Background.module.css";
 import { FaGoogle, FaFacebook } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
+import { IoEyeSharp } from "react-icons/io5";
+import { FaEyeSlash } from "react-icons/fa";
 import {
   FacebookAuthProvider,
   GoogleAuthProvider,
   signInWithPopup,
   GithubAuthProvider,
   TwitterAuthProvider,
-  signInWithEmailAndPassword
+  signInWithEmailAndPassword,
+  sendPasswordResetEmail
 } from "firebase/auth";
 import { authentication } from "../../twitterFirebase";
 import { githubAuth } from "../../githubFirebase";
@@ -19,105 +22,168 @@ import { googleAuth } from "../../googleFirebase";
 import Swal from "sweetalert2";
 
 const Login = () => {
-
   // State for user
   const [user, setUser] = useState(null);
-  /* console.log(user); */
+  const [error, setError] = useState('');
+  const [passwordShow, setPasswordShow] = useState(false);
+  
 
-// Google Login Funciton
+  // Google Login Function
   const googleLogin = () => {
-    const provider = new GoogleAuthProvider()
+    const provider = new GoogleAuthProvider();
     signInWithPopup(googleAuth, provider)
-    .then(result => {
-      console.log(result.user)
-      setUser(result.user)
-      Swal.fire({
-        position: "center",
-        icon: "success",
-        title: "Congratulation",
-        showConfirmButton: true,
-        timer: 1500,
-      });
-      
-    }).catch((error) => {
-      if (!user) {
-        console.log(error.message);
+      .then(result => {
+        console.log(result.user);
+        setUser(result.user);
         Swal.fire({
           position: "center",
           icon: "success",
-          title: "Congratulation",
+          title: "Congratulations",
           showConfirmButton: true,
           timer: 1500,
         });
-      }
-    })
-  }
-  
-  // facebook Login Function
-   const facebookLogin = () => {
+      })
+      .catch((error) => {
+        console.error(error);
+        if (!user) {
+          setError(error.message);
+        }
+      });
+  };
+
+  // Facebook Login Function
+  const facebookLogin = () => {
     const provider = new FacebookAuthProvider();
     signInWithPopup(facebookAuth, provider)
-    .then(result => {
-      console.log(result.user)
-      setUser(result.user)
-    }).catch((error) => {
-      console.log(error.message)
-    })
-   }
-  // GitHub login function
+      .then(result => {
+        console.log(result.user);
+        setUser(result.user);
+      })
+      .catch((error) => {
+        console.error(error);
+        setError(error.message);
+      });
+  };
+
+  // GitHub Login Function
   const githubLogin = () => {
     const provider = new GithubAuthProvider();
-    signInWithPopup(githubAuth , provider)
-    .then(result => {
-      console.log(result.user)
-      setUser(result.user)
-    }).catch((result) => {
-      console.log(result.message)
-    })
+    signInWithPopup(githubAuth, provider)
+      .then(result => {
+        console.log(result.user);
+        setUser(result.user);
+      })
+      .catch((error) => {
+        console.error(error);
+        setError(error.message);
+      });
+  };
+
+  // Twitter Login Function
+  const twitterLogin = () => {
+    const provider = new TwitterAuthProvider();
+    signInWithPopup(authentication, provider)
+      .then(result => {
+        console.log(result.user);
+        setUser(result.user);
+      })
+      .catch((error) => {
+        console.error(error);
+        setError(error.message);
+      });
+  };
+
+  // Form onSubmit Function
+  const handleForm = (event) => {
+    event.preventDefault();
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+
+    if (password.length < 6) {
+      setError("Password must be at least 6 characters");
+      return;
+    } else if (!/[A-Z]/.test(password)) {
+      setError("Password at least one uppercase letter");
+      return;
+    }
+     else if (!/[a-z]/.test(password)) {
+      setError("Password at least one lowercase letter");
+      return;
+    }
+     else if (!/[!,@,#,%,&]/.test(password)) {
+      setError("Password at one Special letter");
+      return;
+    }
+     else if (!/[0-9]/.test(password)) {
+      setError("Password at one Number letter");
+      return;
+    }
+
+    signInWithEmailAndPassword(authentication, email, password)
+      .then((result) => {
+        console.log(result.user);
+        setUser(result.user);
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Your Login Successfully",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+        setError("Invalid email or password");
+      });
+  };
+
+  // Show/Hide Password
+  const handleShowPassword = () => {
+    setPasswordShow(!passwordShow);
+  };
+
+  // forget Password
+
+
+const handleForgetPassword = async () => {
+  const { value: email } = await Swal.fire({
+    title: "Input email address",
+    input: "email",
+    inputLabel: "Your email address",
+    inputPlaceholder: "Enter your email address",
+    showCancelButton: true,
+  });
+
+  if (email) {
+    sendPasswordResetEmail(authentication, email)
+      .then(() => {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Password reset email sent!",
+          showConfirmButton: true,
+          timer: 1500,
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+        Swal.fire({
+          position: "center",
+          icon: "error",
+          title: "Error sending reset email",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      });
   }
- // Twitter Login Function
- const twitterLogin = () => {
-  const provider = new TwitterAuthProvider();
-  signInWithPopup(authentication,provider)
-  .then(result => {
-    console.log(result.user)
-    setUser(result.user)
-  }).catch((result) => {
-    console.log(result.message)
-  })
- }
- // 4 way function firebase
-
-// form onSubmit Function 
-
-const handleForm = (event) => {
-  event.preventDefault();
-  const email = event.target.email.value;
-  const password = event.target.password.value;
-  signInWithEmailAndPassword(authentication,email,password)
-  .then(result => {
-    console.log(result.user)
-     setUser(result.user);
-     Swal.fire({
-       position: "center",
-       icon: "success",
-       title: "Your Login Successfully",
-       showConfirmButton: false,
-       timer: 1500,
-     });
-  })
-  
 };
-
-// Login Function Firebase
-
 
 
   return (
     <div className={style.background}>
       <div className=" h-screen w-full flex justify-center items-center">
-        <div className="bg-[#e31414] w-full sm:w-1/2 md:w-9/12 lg:w-1/2 shadow-md flex flex-col md:flex-row items-center mx-5 sm:m-0 rounded">
-          <div className="w-full md:w-1/2 hidden md:flex flex-col justify-center items-center text-white">
+        <div className=" w-full bg-red-600 sm:w-1/2 md:w-9/12 lg:w-1/2 shadow-md flex flex-col md:flex-row items-center mx-5 sm:m-0 rounded">
+          <div className="w-full md:w-1/2 hidden  md:flex flex-col justify-center items-center text-white ">
             <div className="text-center">
               {user ? (
                 <>
@@ -149,32 +215,53 @@ const handleForm = (event) => {
                   type="email"
                   name="email"
                   placeholder="Email"
-                  
                   className="required appearance-none w-full p-3 rounded border placeholder-black focus:outline-none text-black focus:border-red-600"
                 />
               </div>
               <div className="mb-5">
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="Password"
-                 
-                  className="required appearance-none w-full p-3 rounded border placeholder-black focus:outline-none text-black focus:border-red-600"
-                />
-                <Link>
-                  <p className="text-red-600 px-1">Forget Password</p>
-                </Link>
-              </div>
-             
-                <div className="flex mb-5 justify-center items-center text-red-600">
-                  <button
-                    
-                    type="submit" className={style.originalButton1}
-                  >
-                    Submit
-                  </button>
+                <div className="relative">
+                  <input
+                    type={passwordShow ? "text" : "password"}
+                    name="password"
+                    placeholder="Password"
+                    className="required appearance-none w-full p-3 rounded border placeholder-black focus:outline-none text-black focus:border-red-600"
+                  />
+                  <div className="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5">
+                    {passwordShow ? (
+                      <span
+                        onClick={handleShowPassword}
+                        className="text-black z-10 text-[24px]"
+                      >
+                        <FaEyeSlash></FaEyeSlash>
+                      </span>
+                    ) : (
+                      <span
+                        onClick={handleShowPassword}
+                        className="text-black z-10 text-[24px]"
+                      >
+                        <IoEyeSharp></IoEyeSharp>
+                      </span>
+                    )}
+                  </div>
                 </div>
-             
+
+                <div className="flex justify-between items-center ">
+                  <p className="text-red-600 px-1 cursor-pointer">{error}</p>
+                  <p
+                    onClick={handleForgetPassword}
+                    className="text-red-600 px-1 cursor-pointer"
+                  >
+                    Forget Password
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex mb-5 justify-center items-center text-red-600">
+                <button type="submit" className={style.originalButton1}>
+                  Submit
+                </button>
+              </div>
+
               <div className="text-center">
                 <div className="flex items-center gap-4 justify-center">
                   <div className="w-full h-1 bg-red-800"></div>
