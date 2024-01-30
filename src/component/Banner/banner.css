@@ -1,0 +1,51 @@
+/* Add this CSS to your App.css or create a new CSS file */
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-image: url("https://source.unsplash.com/random?galaxy");
+  background-size: cover;
+  background-position: center;
+}
+
+.glass {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.spinner {
+  display: inline-block;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #000;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Styles for chat */
+.message {
+  background-color: #f3f3f3;
+  padding: 8px 10px;
+  font-size: 14px;
+  border-radius: 12px;
+  max-width: 70%;
+  align-self: flex-start;
+}
+
+.message.sent {
+  background-color: #4B77BE;
+  color: #ffffff;
+  align-self: flex-end;
+}
+
+.message.received {
+  background-color: #f3f3f3;
+  color: #757272;
+  align-self: flex-start;
+}

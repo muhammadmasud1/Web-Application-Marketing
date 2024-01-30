@@ -18,6 +18,7 @@ const Register = () => {
     const email = event.target.email.value;
     const number = event.target.number.value;
     const password = event.target.password.value;
+    const term = event.target.term.checked;
     /* console.log(name,email,number,password) */
 
     if (password.length < 6) {
@@ -34,6 +35,8 @@ const Register = () => {
       return;
     } else if(!/[0-9]/.test(password)){
       setError('Password at least one number letter')
+    } else if (!term){
+      setError('Click Term And Condition')
     }
     createUserWithEmailAndPassword(
       authentication,
@@ -166,6 +169,10 @@ const Register = () => {
                         </span>
                       )}
                     </div>
+                  </div>
+                  <div className="flex gap-2">
+                    <input type="checkbox" name="term" id="checkbox" />
+                    <label className="text-black" htmlFor="checkbox">I agree a term Condition</label>
                   </div>
                 </div>
                 <div className="mb-5">
