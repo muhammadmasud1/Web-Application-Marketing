@@ -5,9 +5,16 @@ import { FaShare } from "react-icons/fa";
 import { IoMdTime } from "react-icons/io";
 import { MdVerified } from "react-icons/md";
 import { Link } from 'react-router-dom';
+
 const FeaterCard = ({data}) => {
 
+
+
               const {id,image,name,description,time} = data;
+              
+
+
+      
               return (
                 <div>
                   <div className={style.card}>

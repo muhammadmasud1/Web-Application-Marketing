@@ -99,7 +99,7 @@ const Login = () => {
     const email = event.target.email.value;
     const password = event.target.password.value;
 
-    if (password.length < 6) {
+  /*   if (password.length < 6) {
       setError("Password must be at least 6 characters");
       return;
     } else if (!/[A-Z]/.test(password)) {
@@ -117,7 +117,7 @@ const Login = () => {
      else if (!/[0-9]/.test(password)) {
       setError("Password at one Number letter");
       return;
-    }
+    } */
 
     signInWithEmailAndPassword(authentication, email, password)
       .then((result) => {
@@ -132,8 +132,14 @@ const Login = () => {
         });
       })
       .catch((error) => {
-        console.error(error);
-        setError("Invalid email or password");
+        console.log(error.message)
+        Swal.fire({
+          position: "center",
+          icon: "error",
+          title: "invalid Gmail or Password",
+          showConfirmButton: false,
+          timer: 1500,
+        });
       });
   };
 
@@ -246,7 +252,7 @@ const handleForgetPassword = async () => {
                 </div>
 
                 <div className="flex justify-between items-center ">
-                  <p className="text-red-600 px-1 cursor-pointer">{error}</p>
+                  <p className="text-red-600 px-1 cursor-pointer">{/* error */}</p>
                   <p
                     onClick={handleForgetPassword}
                     className="text-red-600 px-1 cursor-pointer"

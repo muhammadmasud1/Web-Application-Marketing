@@ -130,7 +130,7 @@ const Nav = () => {
                         </div>
                         <a className="btn btn-ghost text-2xl hidden sm:inline-block">
                           <span className={styles.text}>
-                            Eleventor Concepts
+                            Marketing Agencey
                           </span>
                         </a>
                       </div>

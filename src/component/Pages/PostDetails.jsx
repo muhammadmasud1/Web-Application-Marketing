@@ -8,6 +8,7 @@ import { IoMdTime } from "react-icons/io";
 import { MdVerified } from "react-icons/md";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 const notify = () =>
   toast.success("Thanks For Love", {
     position: "top-center",
@@ -30,7 +31,10 @@ const PostDetails = () => {
   const findData = dataPost.find((data) => data.id == id);
   // Check if findData exists before accessing its properties
   if (!findData) {
-    return <p>Loading...</p>; // Add a loading indicator or handle the case differently
+    return <p>Loading...</p>; 
+
+    
+      
   }
   return (
     <div className={style.backgroundImages}>
@@ -60,6 +64,8 @@ const PostDetails = () => {
                     <Link to={`/postDetails/${id}`}>
                       <button className="btn btn-outline btn-error">
                         <span className="text-gray-300">Message</span>
+                                  
+                        
                       </button>
                     </Link>
                   </div>

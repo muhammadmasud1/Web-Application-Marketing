@@ -20,7 +20,7 @@ const Featurepost = ({ pathLocation }) => {
         <div className=""></div>
         <div>
           <h1 className="text-4xl py-10 text-center font-semibold antialiased ">
-            Feature Post{" "}
+            Our Team Member{" "}
           </h1>
         </div>
         <div className=" grid px-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
