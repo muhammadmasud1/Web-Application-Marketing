@@ -42,7 +42,7 @@ const Featurepost = ({ pathLocation }) => {
             </>
           )}
         </div>
-        <div className="flex justify-center items-center py-10">
+        <div className="flex justify-center items-center py-28">
           {pathLocation === "/post" ? (
             ""
           ) : (

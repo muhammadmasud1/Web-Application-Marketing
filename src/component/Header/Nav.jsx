@@ -29,7 +29,7 @@ const Nav = () => {
                           : ""
                       }
                     >
-                      Post
+                      Member
                     </NavLink>
                   </li>
                   <li className="text-xl text-white">

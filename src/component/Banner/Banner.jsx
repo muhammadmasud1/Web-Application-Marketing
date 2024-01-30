@@ -77,15 +77,15 @@ const Banner = () => {
   return (
     <div className="min-h-screen flex flex-col justify-center items-center py-8">
       <div className="container mx-auto px-4 text-white flex flex-col justify-center items-center">
-        <h1 className="text-4xl md:text-5xl font-bold mb-8">MARKETING INC.</h1>
+        <h1 className="text-3xl md:text-4xl font-bold mb-8">
+          Marketing Inc Web Application
+        </h1>
         <p className="text-base mb-8 mx-auto max-w-md">
-          WE ARE LAUNCHING OUR WEBSITE SOON.
+          Express your opinion about Marketing Inc web application
         </p>
 
         <div className="bg-white glass shadow-lg flex flex-col justify-center items-center rounded-lg p-8 mb-4 max-w-md md:max-w-lg">
-          <p className="text-white mb-4">
-            Sign up to be notified when we launch
-          </p>
+          <p className="text-white mb-4">Here you register your Gmail</p>
           <form
             id="notify-form"
             className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mb-10"
@@ -104,7 +104,7 @@ const Banner = () => {
               type="submit"
               className="bg-blue-600 text-white rounded-lg w-40 px-4 py-2"
             >
-              Notify Me
+              Submit
             </button>
           </form>
           <div className="bg-white glass shadow-lg rounded-lg p-3 mb-4">
@@ -155,7 +155,7 @@ const Banner = () => {
               <i className="fab fa-instagram"></i>
             </a>
           </div>
-          <p>&copy; 2023 Marketing Inc. All rights reserved.</p>
+          <p>&copy; 2024 Marketing Inc. All rights reserved.</p>
         </footer>
       </div>
     </div>
