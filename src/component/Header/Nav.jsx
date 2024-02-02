@@ -129,9 +129,7 @@ const Nav = () => {
                           </ul>
                         </div>
                         <a className="btn btn-ghost text-2xl hidden sm:inline-block">
-                          <span className={styles.text}>
-                            Marketing Agencey
-                          </span>
+                          <span className={styles.text}>Marketing Agencey</span>
                         </a>
                       </div>
                       <div className="navbar-center hidden lg:flex">
@@ -140,11 +138,39 @@ const Nav = () => {
                         </ul>
                       </div>
                       <div className="navbar-end">
-                        <Link to='login'>
-                          <button className={styles.originalButton}>
-                            Login
-                          </button>
-                        </Link>
+                        <div className="dropdown dropdown-end">
+                          <div
+                            tabIndex={0}
+                            role="button"
+                            className="btn btn-ghost btn-circle avatar"
+                          >
+                            <div className="w-10 rounded-full">
+                              <img
+                                alt="Tailwind CSS Navbar component"
+                                src="https://i.ibb.co/pfGzV02/output-image.jpg"
+                              />
+                            </div>
+                          </div>
+                          <ul
+                            tabIndex={0}
+                            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-black rounded-box w-52"
+                          >
+                            <li>
+                              <a className="justify-between">
+                                Profile
+                                <span className="badge">New</span>
+                              </a>
+                            </li>
+                            <li>
+                              <a>Settings</a>
+                            </li>
+                            <li>
+                              <Link to="/login">
+                                <a href="#">Login</a>
+                              </Link>
+                            </li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>

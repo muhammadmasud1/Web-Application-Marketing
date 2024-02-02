@@ -1,12 +1,17 @@
 /* Add this CSS to your App.css or create a new CSS file */
 
-body {
+/* body {
   font-family: 'Roboto', sans-serif;
   background-image: url("https://source.unsplash.com/random?galaxy");
   background-size: cover;
   background-position: center;
+} */
+.containerBanner{
+  font-family: 'Roboto', sans-serif;
+  background-image: url("https://i.ibb.co/pfGzV02/output-image.jpg");
+  background-size: cover;
+  background-position: center;
 }
-
 .glass {
   backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.1);
