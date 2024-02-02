@@ -1,6 +1,7 @@
+import Accourdation from '../Accourdation/Accourdation';
 import Banner from '../Banner/Banner';
+import Carousel from '../Carousel/Carousel';
 
-import MainCarousel from './Carousel/MainCarousel';
 import Featurepost from './Featurepost';
 import TimeLine from './TimeLine';
 
@@ -10,7 +11,10 @@ const Home = () => {
                   <Banner></Banner>
                   <Featurepost></Featurepost>
                   <TimeLine></TimeLine>
-                  <MainCarousel></MainCarousel>
+                  <Accourdation></Accourdation>
+                  <Carousel></Carousel>
+                 
+                  
                 
                 </>
               );
