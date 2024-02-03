@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, } from "react-router-dom";
 import style from "../Styles/Background.module.css";
 import { FaGoogle, FaFacebook } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
