@@ -12,6 +12,7 @@ import Featurepost from "../component/Pages/Featurepost";
 import PostDetails from "../component/Pages/PostDetails";
 import Dashboard from "../Root/Dashboard/Dashboard";
 import Profile from "../component/Pages/Profile";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -24,49 +25,56 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-              path : '/post',
-              element : <Post></Post>
+        path: "/post",
+        element: <Post></Post>,
       },
       {
-              path : '/service',
-              element : <Service></Service>
+        path: "/service",
+        element: <Service></Service>,
       },
       {
-              path : '/about',
-              element : <About></About>
+        path: "/about",
+        element: <About></About>,
       },
       {
-              path : '/contact',
-              element : <Contact></Contact>
+        path: "/contact",
+        element: <Contact></Contact>,
       },
       {
-              path : '/login',
-              element : <Login></Login>
+        path: "/login",
+        element: <Login></Login>,
       },
       {
-              path : '/register',
-              element : <Register></Register>
+        path: "/register",
+        element: <Register></Register>,
       },
       {
-              path : '/register',
-              element : <Featurepost></Featurepost>
+        path: "/register",
+        element: <Featurepost></Featurepost>,
       },
       {
-              path : '/profile',
-              element : <Profile></Profile>
-      }
-      ,
+        path: "/profile",
+        element: (
+          <PrivateRoute>
+            <Profile></Profile>,
+          </PrivateRoute>
+        ),
+      },
       {
-            path : '/postDetails/:id',
-            element : <PostDetails></PostDetails>
-      }
+        path: "/postDetails/:id",
+        element: <PostDetails></PostDetails>,
+      },
     ],
   },
 
   /* =============create dashboard tamplate and configuration =================*/
-    {
-        path : 'dashboard',
-        element : <Dashboard></Dashboard>
-    }
+  {
+    path: "dashboard",
+    element: (
+      <PrivateRoute>
+        <Dashboard></Dashboard>
+      </PrivateRoute>
+    ),
+  },
 ]);
 export default router

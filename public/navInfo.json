@@ -20,12 +20,7 @@
     "navName": "About" ,
     "link"  : "/about"   
          
-},
-
-{
-    "id": 6,
-    "navName": "Dashboard" ,
-    "link"  : "/dashboard"   
-         
 }
+
+  
 ]

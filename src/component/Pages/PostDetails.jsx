@@ -8,6 +8,7 @@ import { IoMdTime } from "react-icons/io";
 import { MdVerified } from "react-icons/md";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Loading from "../Loading/Loading";
 
 const notify = () =>
   toast.success("Thanks For Love", {
@@ -31,7 +32,7 @@ const PostDetails = () => {
   const findData = dataPost.find((data) => data.id == id);
   // Check if findData exists before accessing its properties
   if (!findData) {
-    return <p>Loading...</p>; 
+    return <Loading></Loading>; 
 
     
       

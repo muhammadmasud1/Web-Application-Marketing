@@ -80,6 +80,11 @@ const Nav = () => {
                               <Link to={item.link}>{item.navName}</Link>
                             </li>
                           ))}
+                          {user && (
+                            <li className="text-[18px] font-semibold">
+                              <Link to={"/dashboard"}>Dashboard</Link>
+                            </li>
+                          )}
                         </ul>
                       </div>
                       <div className="navbar-end">
