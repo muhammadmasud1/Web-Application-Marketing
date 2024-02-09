@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, } from "react-router-dom";
+import { Link, useNavigate, } from "react-router-dom";
 import style from "../Styles/Background.module.css";
 import { FaGoogle, FaFacebook } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
@@ -18,15 +18,17 @@ import {
 } from "firebase/auth";
 import Swal from "sweetalert2";
 import app from "../Firebase Process/firebaseKey";
+ 
 
 const Login = () => {
   // State for user
   const [user, setUser] = useState(null);
   const [error, setError] = useState('');
   const [passwordShow, setPasswordShow] = useState(false);
+  const navigate = useNavigate()
   
-  const auth = getAuth(app)
 
+  const auth = getAuth(app)
   // Google Login Function
   const googleLogin = () => {
     const provider = new GoogleAuthProvider();
@@ -34,6 +36,7 @@ const Login = () => {
       .then(result => {
         console.log(result.user);
         setUser(result.user);
+        navigate('/profile')
         Swal.fire({
           position: "center",
           icon: "success",
@@ -56,6 +59,7 @@ const Login = () => {
     signInWithPopup(auth, provider)
       .then(result => {
         console.log(result.user);
+        navigate("/profile");
         setUser(result.user);
       })
       .catch((error) => {
@@ -71,6 +75,7 @@ const Login = () => {
       .then(result => {
         console.log(result.user);
         setUser(result.user);
+        navigate("/profile");
       })
       .catch((error) => {
         console.error(error);
@@ -85,6 +90,7 @@ const Login = () => {
       .then(result => {
         console.log(result.user);
         setUser(result.user);
+        navigate("/profile");
       })
       .catch((error) => {
         console.error(error);
@@ -98,30 +104,13 @@ const Login = () => {
     const email = event.target.email.value;
     const password = event.target.password.value;
 
-  /*   if (password.length < 6) {
-      setError("Password must be at least 6 characters");
-      return;
-    } else if (!/[A-Z]/.test(password)) {
-      setError("Password at least one uppercase letter");
-      return;
-    }
-     else if (!/[a-z]/.test(password)) {
-      setError("Password at least one lowercase letter");
-      return;
-    }
-     else if (!/[!,@,#,%,&]/.test(password)) {
-      setError("Password at one Special letter");
-      return;
-    }
-     else if (!/[0-9]/.test(password)) {
-      setError("Password at one Number letter");
-      return;
-    } */
+  
 
     signInWithEmailAndPassword(auth, email, password)
       .then((result) => {
         console.log(result.user);
         setUser(result.user);
+        navigate("/profile");
         Swal.fire({
           position: "center",
           icon: "success",
@@ -161,7 +150,9 @@ const handleForgetPassword = async () => {
 
   if (email) {
     sendPasswordResetEmail(auth, email)
-      .then(() => {
+      .then((result) => {
+        console.log(result.user)
+        navigate("/profile");
         Swal.fire({
           position: "center",
           icon: "success",

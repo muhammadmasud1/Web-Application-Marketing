@@ -1,18 +1,20 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import style from "../Styles/Background.module.css";
 
-import { createUserWithEmailAndPassword, getAuth } from "firebase/auth"; 
+import { createUserWithEmailAndPassword, getAuth, updateProfile } from "firebase/auth"; 
 import Swal from "sweetalert2";
 import { IoEyeSharp } from "react-icons/io5";
 import { FaEyeSlash } from "react-icons/fa";
 import { FaCircleCheck } from "react-icons/fa6";
 import { useState } from "react";
-import app from "../Firebase Process/firebaseKey";
+
+import AuthCustom from "../Custom Hook/AuthCustom";
 
 const Register = () => {
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const auth = getAuth(app)
+  const {createUser} = AuthCustom()
+  const navigate = useNavigate()
 
   const handleRegisterForm = (event) => {
     event.preventDefault();
@@ -20,6 +22,8 @@ const Register = () => {
     const email = event.target.email.value;
     const number = event.target.number.value;
     const password = event.target.password.value;
+    const photo = event.target.photo.value;
+    
     const term = event.target.term.checked;
     /* console.log(name,email,number,password) */
 
@@ -40,16 +44,21 @@ const Register = () => {
     } else if (!term){
       setError('Click Term And Condition')
     }
-    createUserWithEmailAndPassword(
-      auth,
+    createUser(
       email,
       password,
       name,
-      number
+      number,
+      photo
     )
       .then((result) => {
         console.log(result.user);
-
+        navigate('/login')
+        updateProfile(result.user , {
+         displayName : name,
+         number : number,
+         photoURL : photo
+        })
         Swal.fire({
           position: "center",
           icon: "success",
@@ -138,10 +147,18 @@ const Register = () => {
                   </div>
                   <div>
                     <input
+                      type="photo"
+                      name="photo"
+                      placeholder="Your Photo Url"
+                      className="required mt-4 appearance-none w-full p-3 rounded border placeholder-black focus:outline-none text-black focus:border-red-600"
+                    />
+                  </div>
+                  <div>
+                    <input
                       type="email"
                       placeholder="Email"
                       name="email"
-                      className="required appearance-none w-full p-3 rounded border placeholder-black focus:outline-none text-black focus:border-red-600"
+                      className="required appearance-none mt-4 w-full p-3 rounded border placeholder-black focus:outline-none text-black focus:border-red-600"
                     />
                   </div>
                 </div>

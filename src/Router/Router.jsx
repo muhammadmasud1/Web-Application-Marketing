@@ -11,6 +11,7 @@ import Register from "../component/Pages/Register";
 import Featurepost from "../component/Pages/Featurepost";
 import PostDetails from "../component/Pages/PostDetails";
 import Dashboard from "../Root/Dashboard/Dashboard";
+import Profile from "../component/Pages/Profile";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
       {
               path : '/register',
               element : <Featurepost></Featurepost>
+      },
+      {
+              path : '/profile',
+              element : <Profile></Profile>
       }
       ,
       {
