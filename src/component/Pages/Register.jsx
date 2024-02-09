@@ -1,16 +1,18 @@
 import { Link } from "react-router-dom";
 import style from "../Styles/Background.module.css";
-import { authentication } from "../../twitterFirebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+
+import { createUserWithEmailAndPassword, getAuth } from "firebase/auth"; 
 import Swal from "sweetalert2";
 import { IoEyeSharp } from "react-icons/io5";
 import { FaEyeSlash } from "react-icons/fa";
 import { FaCircleCheck } from "react-icons/fa6";
 import { useState } from "react";
+import app from "../Firebase Process/firebaseKey";
 
 const Register = () => {
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const auth = getAuth(app)
 
   const handleRegisterForm = (event) => {
     event.preventDefault();
@@ -39,7 +41,7 @@ const Register = () => {
       setError('Click Term And Condition')
     }
     createUserWithEmailAndPassword(
-      authentication,
+      auth,
       email,
       password,
       name,

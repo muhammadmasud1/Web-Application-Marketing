@@ -12,10 +12,7 @@ const Home = () => {
                   <Featurepost></Featurepost>
                   <TimeLine></TimeLine>
                   <Accourdation></Accourdation>
-                  <Carousel></Carousel>
-                 
-                  
-                
+                  <Carousel></Carousel>  
                 </>
               );
 };

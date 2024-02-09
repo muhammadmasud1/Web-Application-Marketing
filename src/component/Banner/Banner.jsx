@@ -60,6 +60,7 @@ const Banner = () => {
           }),
         }
       );
+      
 
       const data = await response.json();
 

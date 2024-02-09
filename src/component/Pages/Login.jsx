@@ -13,13 +13,11 @@ import {
   GithubAuthProvider,
   TwitterAuthProvider,
   signInWithEmailAndPassword,
-  sendPasswordResetEmail
+  sendPasswordResetEmail,
+  getAuth
 } from "firebase/auth";
-import { authentication } from "../../twitterFirebase";
-import { githubAuth } from "../../githubFirebase";
-import { facebookAuth } from "../../fbFirebase";
-import { googleAuth } from "../../googleFirebase";
 import Swal from "sweetalert2";
+import app from "../Firebase Process/firebaseKey";
 
 const Login = () => {
   // State for user
@@ -27,11 +25,12 @@ const Login = () => {
   const [error, setError] = useState('');
   const [passwordShow, setPasswordShow] = useState(false);
   
+  const auth = getAuth(app)
 
   // Google Login Function
   const googleLogin = () => {
     const provider = new GoogleAuthProvider();
-    signInWithPopup(googleAuth, provider)
+    signInWithPopup(auth, provider)
       .then(result => {
         console.log(result.user);
         setUser(result.user);
@@ -54,7 +53,7 @@ const Login = () => {
   // Facebook Login Function
   const facebookLogin = () => {
     const provider = new FacebookAuthProvider();
-    signInWithPopup(facebookAuth, provider)
+    signInWithPopup(auth, provider)
       .then(result => {
         console.log(result.user);
         setUser(result.user);
@@ -68,7 +67,7 @@ const Login = () => {
   // GitHub Login Function
   const githubLogin = () => {
     const provider = new GithubAuthProvider();
-    signInWithPopup(githubAuth, provider)
+    signInWithPopup(auth, provider)
       .then(result => {
         console.log(result.user);
         setUser(result.user);
@@ -82,7 +81,7 @@ const Login = () => {
   // Twitter Login Function
   const twitterLogin = () => {
     const provider = new TwitterAuthProvider();
-    signInWithPopup(authentication, provider)
+    signInWithPopup(auth, provider)
       .then(result => {
         console.log(result.user);
         setUser(result.user);
@@ -119,7 +118,7 @@ const Login = () => {
       return;
     } */
 
-    signInWithEmailAndPassword(authentication, email, password)
+    signInWithEmailAndPassword(auth, email, password)
       .then((result) => {
         console.log(result.user);
         setUser(result.user);
@@ -161,7 +160,7 @@ const handleForgetPassword = async () => {
   });
 
   if (email) {
-    sendPasswordResetEmail(authentication, email)
+    sendPasswordResetEmail(auth, email)
       .then(() => {
         Swal.fire({
           position: "center",
