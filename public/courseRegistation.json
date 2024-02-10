@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "courseImg": "https://i.ibb.co/44yWRpv/Rectangle-2.png",
+    "courseName": "Introduction to OOP Python",
+    "description": " Learn essential object-oriented programming concepts with practical examples and exercises.",
+    "coursePrice": 100,
+    "credit": "5hr"
+  },
+  {
+    "id": 2,
+    "courseImg": "https://i.ibb.co/5M44KXK/Rectangle-2-1.png",
+    "courseName": "Database (MySQL)",
+    "description": " Master database management with comprehensive MySQL tutorials and resources.",
+    "coursePrice": 200,
+    "credit": "5hr"
+  },
+  {
+    "id": 3,
+    "courseImg": "https://i.ibb.co/gMd1yQB/Rectangle-2-2.png",
+    "courseName": "Introduction to C Programming",
+    "description": "Introduction to C Programming: Explore the basics of C language development.",
+    "coursePrice": 150,
+    "credit": "1hr"
+  },
+  {
+    "id": 4,
+    "courseImg": "https://i.ibb.co/9pwNKs5/Rectangle-2-3.png",
+    "courseName": "Introduction to Algorithms",
+    "description": "Dive into comprehensive course content on Introduction to Algorithms.",
+    "coursePrice": 50,
+    "credit": "2hr"
+  },
+  {
+    "id": 5,
+    "courseImg": "https://i.ibb.co/CbgB7hB/Rectangle-2-4.png",
+    "courseName": "Introduction to C++ for DSA",
+    "description": " Master data structures and algorithms in this comprehensive introductory course.",
+    "coursePrice": 60,
+    "credit": "10hr"
+  },
+  {
+    "id": 6,
+    "courseImg": "https://i.ibb.co/jrjMtYL/Rectangle-2-5.png",
+    "courseName": "Software Engineering",
+    "description": "Explore the principles and practices of building high-quality software systems efficiently and effectively.",
+    "coursePrice": 70,
+    "credit": "2hr"
+  },
+  {
+    "id": 7,
+    "courseImg": "https://i.ibb.co/x5kTHF9/Rectangle-2-6.png",
+    "courseName": "Problem-Solving Part",
+    "description": "Develop essential skills for tackling complex challenges in software development.",
+    "coursePrice": 60,
+    "credit": "2hr"
+  },
+  {
+    "id": 8,
+    "courseImg": "https://i.ibb.co/VBNKpNt/Rectangle-3.png",
+    "courseName": "Basic Data Structures",
+    "description": "Learn essential concepts for efficient software development and problem-solving.",
+    "coursePrice": 10,
+    "credit": "5hr"
+  },
+  {
+    "id": 9,
+    "courseImg": "https://i.ibb.co/2gJNp0c/Rectangle-3-1.png",
+    "courseName": "AWS, Cloud Computing",
+    "description": "Dive into Amazon Web Services and the fundamentals of cloud technology.",
+    "coursePrice": 50,
+    "credit": "5hr"
+  }
+]

@@ -1,7 +1,9 @@
+import Course from "../Course/Course";
+
 const Service = () => {
               return (
                             <div>
-                              Service            
+                              <Course></Course>          
                             </div>
               );
 };

@@ -68,7 +68,9 @@ const Nav = () => {
                             ))}
                           </ul>
                         </div>
-                        <a className="btn btn-ghost text-xl">Web Application</a>
+                        <a className="btn btn-ghost text-xl">
+                          <Link to={'/'}>Web Application</Link>
+                        </a>
                       </div>
                       <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal">
@@ -109,9 +111,7 @@ const Nav = () => {
                               <li>
                                 <a className="justify-between">
                                   <Link to={"/profile"}>Profile</Link>
-                                  <span className="badge">
-                                    New
-                                  </span>
+                                  <span className="badge">New</span>
                                 </a>
                               </li>
                               <li>
