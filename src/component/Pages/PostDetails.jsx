@@ -4,6 +4,7 @@ import style from "../Styles/Background.module.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Loading from "../Loading/Loading";
+import { MdVerified } from "react-icons/md";
 
 const notify = () =>
   toast.success("Thanks For Love", {
@@ -44,7 +45,12 @@ const PostDetails = () => {
                     className="w-32 h-32 bg-gray-300 rounded-full mb-4 shrink-0"
                     alt="Profile"
                   />
-                  <h1 className="text-xl font-bold">{findData.name}</h1>
+                  <span className="flex">
+                    <h1 className="text-xl font-bold">{findData.name}</h1>
+                    <span className="text-blue-600">
+                      <MdVerified></MdVerified>
+                    </span>
+                  </span>
                   <p className="text-gray-700">{findData.title}</p>
                   <div className="mt-6 flex flex-wrap gap-4 justify-center">
                     <a
