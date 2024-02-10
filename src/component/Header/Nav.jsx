@@ -97,7 +97,7 @@ const Nav = () => {
                             >
                               <div className="w-10 rounded-full">
                                 <img
-                                  alt="Tailwind CSS Navbar component"
+                                  alt="User Photo"
                                   src={user ? user?.photoURL : ""}
                                 />
                               </div>
@@ -110,7 +110,7 @@ const Nav = () => {
                                 <a className="justify-between">
                                   <Link to={"/profile"}>Profile</Link>
                                   <span className="badge">
-                                    <Link to={"/login"}>Login</Link>
+                                    New
                                   </span>
                                 </a>
                               </li>

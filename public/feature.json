@@ -4,94 +4,119 @@
     "image": "https://i.ibb.co/cKByvxJ/pexels-simon-robben-977796.jpg",
     "name": "CodeMasterX",
     "description": "Passionate coder specializing in web development and design. Expert in HTML, CSS, and JavaScript.",
-    "time": "08:00 AM"
+    "time": "08:00 AM",
+    "about": "A passionate coder specializing in web development and design, I bring expertise in HTML, CSS, and JavaScript to every project. With a keen eye for detail and a dedication to creating seamless user experiences, I thrive on crafting elegant and functional websites. From responsive layouts to dynamic interactions, I'm committed to delivering top-notch solutions that exceed expectations. Let's collaborate to bring your vision to life and make your online presence shine.",
+    "title": "Web development",
+    "companyName": "ABC Company 2020-2024"
   },
   {
     "id": 2,
     "image": "https://i.ibb.co/jTSGFn3/pexels-simon-robben-905375.jpg",
     "name": "ByteNinja",
     "description": "Software architect with a focus on scalable solutions. Proficient in Python, Java, and cloud technologies.",
-    "time": "12:30 PM"
+    "time": "12:30 PM",
+    "about": "As a seasoned software architect, I specialize in architecting scalable solutions that meet complex business needs. With proficiency in Python, Java, and cloud technologies, I excel at designing robust systems that can handle high volumes of data and traffic. My strategic approach to architecture ensures optimal performance, reliability, and security. Leveraging my expertise, I empower organizations to thrive in dynamic environments by building resilient and adaptable software solutions. Let's collaborate to architect the future of your digital infrastructure.",
+    "title": "Software Architect",
+    "companyName": "XYZ Corporation"
   },
   {
     "id": 3,
     "image": "https://i.ibb.co/TbKhbP3/pexels-jeffrey-reed-769733.jpg",
     "name": "DataWizard",
     "description": "Data scientist crunching numbers for valuable insights. Skilled in Python, R, and machine learning.",
-    "time": "03:45 PM"
+    "time": "03:45 PM",
+    "about": "A dedicated data scientist proficient in Python, R, and machine learning, I specialize in extracting valuable insights from data to drive informed decisions. With a keen eye for patterns and trends, I leverage advanced statistical techniques to uncover actionable intelligence. My expertise extends to data visualization and predictive modeling, enabling organizations to make data-driven decisions with confidence. Let me apply my analytical skills to unlock the full potential of your data and drive strategic outcomes for your business.",
+    "title": "Data Scientist",
+    "companyName": "123 Enterprises"
   },
   {
     "id": 4,
     "image": "https://i.ibb.co/TvZShjs/pexels-fernanda-latronico-709188.jpg",
     "name": "BugHunter",
     "description": "Quality assurance expert ensuring flawless code. Master of testing frameworks and automation.",
-    "time": "10:15 AM"
+    "time": "10:15 AM",
+    "about": "As a quality assurance expert, I specialize in ensuring flawless code through meticulous testing methodologies. With mastery in testing frameworks and automation tools, I streamline processes to enhance efficiency and reliability. My dedication to maintaining high standards and attention to detail ensures that software products meet the highest quality benchmarks. Through comprehensive testing strategies, I contribute to delivering robust and reliable solutions to end-users.",
+    "title": "Quality Assurance Expert",
+    "companyName": "Tech Innovations Ltd."
   },
   {
     "id": 5,
     "image": "https://i.ibb.co/9h9zTq3/pexels-chloe-1043473.jpg",
     "name": "UI_Magician",
     "description": "Front-end developer crafting delightful user interfaces. Proficient in React, Vue, and CSS frameworks.",
-    "time": "05:00 PM"
+    "time": "05:00 PM",
+    "about": "As a seasoned quality assurance expert, I specialize in ensuring flawless code through meticulous testing and automation. With mastery in testing frameworks, I meticulously analyze software to guarantee its reliability, functionality, and performance. My expertise spans both manual and automated testing methodologies, allowing for comprehensive coverage and rapid identification of potential issues. By implementing robust QA processes, I facilitate the delivery of high-quality software products, contributing to enhanced user satisfaction and business success.",
+    "title": "Software Engineer",
+    "companyName": "Global Solutions Inc."
   },
   {
     "id": 6,
     "image": "https://i.ibb.co/Bng7vWc/pexels-christina-morillo-1181391.jpg",
     "name": "DevOps_Guru",
     "description": "DevOps engineer streamlining development workflows. Expertise in Docker, Kubernetes, and CI/CD.",
-    "time": "09:45 AM"
+    "time": "09:45 AM",
+    "about": "As a DevOps engineer, I excel in streamlining development workflows by integrating continuous integration and continuous deployment (CI/CD) pipelines. Leveraging my expertise in Docker and Kubernetes, I orchestrate scalable and resilient containerized environments, ensuring seamless deployment and management of applications. My focus on automation and infrastructure as code (IaC) enables teams to achieve rapid iteration and delivery cycles while maintaining high levels of reliability and efficiency. With a passion for optimizing processes, I drive innovation and collaboration across development and operations teams.",
+    "title": "DevOPs Engineer",
+    "companyName": "FutureTech Co."
   },
   {
     "id": 7,
     "image": "https://i.ibb.co/hMPTsPm/pexels-linkedin-sales-navigator-2182970.jpg",
     "name": "CodeFashionista",
     "description": "Full-stack developer merging functionality with style. Fluent in Node.js, Express, and MongoDB.",
-    "time": "02:20 PM"
+    "time": "02:20 PM",
+    "about": "As a full-stack developer, I excel in merging functionality with style, leveraging my expertise in Node.js, Express, and MongoDB. With a keen eye for design and a strong command of backend technologies, I craft robust and aesthetically pleasing web applications. Whether it's architecting databases or implementing sleek user interfaces, I ensure a seamless and engaging user experience from start to finish.",
+    "title": "Full-Stack Developer",
+    "companyName": "Smart Technologies LLC"
   },
   {
     "id": 8,
     "image": "https://i.ibb.co/BwNqvN2/pexels-justin-shaifer-1222271.jpg",
     "name": "AI_Enthusiast",
     "description": "Artificial intelligence researcher exploring the frontiers of machine learning. Proficient in TensorFlow and Python.",
-    "time": "11:30 AM"
+    "time": "11:30 AM",
+    "about": "As an artificial intelligence researcher, I delve into the frontiers of machine learning, leveraging my proficiency in TensorFlow and Python. My work involves pushing the boundaries of AI algorithms to solve complex problems and unlock new possibilities. With a keen focus on innovation and a deep understanding of neural networks, I strive to create intelligent systems that revolutionize industries and enhance human capabilities.",
+    "title": "Artificial Intelligence",
+    "companyName": "Innovative Solutions Ltd."
   },
   {
     "id": 9,
     "image": "https://i.ibb.co/54B190t/pexels-nitin-khajotia-1516680.jpg",
     "name": "Codepreneur",
     "description": "Entrepreneurial developer shaping innovative solutions. Experienced in startups and agile methodologies.",
-    "time": "01:05 PM"
+    "time": "01:05 PM",
+    "about": "As an entrepreneurial developer, I specialize in shaping innovative solutions, drawing from my extensive experience in startups and agile methodologies. I thrive in dynamic environments, where I leverage my creativity and technical expertise to bring disruptive ideas to life. With a keen eye for market trends and user needs, I craft products that not only meet but exceed expectations, driving growth and success for both businesses and users alike.",
+    "title": "Entrepreneurial Developer",
+    "companyName": "Data Insights Group"
   },
   {
     "id": 10,
     "image": "https://i.ibb.co/TbKhbP3/pexels-jeffrey-reed-769733.jpg",
     "name": "HackathonHero",
     "description": "Competitive coder with a knack for solving complex problems. Multiple hackathon champion.",
-    "time": "04:40 PM"
+    "time": "04:40 PM",
+    "about": "As a competitive coder, I excel in solving complex problems, demonstrated by my multiple hackathon championships. With a keen analytical mind and a passion for problem-solving, I thrive in high-pressure environments where quick thinking and innovative solutions are paramount. My track record of success in competitive coding showcases my ability to tackle challenges head-on and consistently deliver results. I am constantly seeking new opportunities to push the boundaries of what's possible and make a lasting impact in the world of coding.",
+    "title": "Competitive Coder",
+    "companyName": "EcoTech Industries"
   },
   {
     "id": 11,
     "image": "https://i.ibb.co/cKByvxJ/pexels-simon-robben-977796.jpg",
     "name": "CodeExplorer",
     "description": "Tech explorer delving into new languages and frameworks. Enthusiastic about continuous learning.",
-    "time": "06:15 PM"
+    "time": "06:15 PM",
+    "about": "As a tech explorer, I immerse myself in new languages and frameworks, driven by an insatiable curiosity and enthusiasm for continuous learning. I thrive on the thrill of mastering new technologies and pushing the boundaries of my knowledge. Whether it's diving into the latest programming language or experimenting with cutting-edge frameworks, I approach each challenge with boundless energy and a passion for discovery. My dedication to staying abreast of industry trends ensures that I remain adaptable and ready to tackle any technological hurdle that comes my way.",
+    "title": "Tech Explorer",
+    "companyName": "Digital Dynamics Inc."
   },
   {
     "id": 12,
     "image": "https://i.ibb.co/Bng7vWc/pexels-christina-morillo-1181391.jpg",
     "name": "SyntaxMaestro",
     "description": "Master of coding syntax, teaching and mentoring others. Passionate about knowledge sharing.",
-    "time": "07:00 AM"
+    "time": "07:00 AM",
+    "about": "As a master of coding syntax, I find fulfillment in teaching and mentoring others, sharing my passion for technology and programming. I believe in the power of knowledge sharing to empower individuals and elevate the entire community. With a patient and supportive approach, I guide aspiring developers",
+    "title": "Master of Coding Syntax",
+    "companyName": "AI Innovations Ltd."
   }
 ]
-
-
-
-
-
-
-
-
-
-
-
