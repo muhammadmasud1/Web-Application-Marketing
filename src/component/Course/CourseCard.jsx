@@ -1,7 +1,7 @@
 import { IoBookSharp } from "react-icons/io5";
 import { AiFillDollarCircle } from "react-icons/ai";
 import style from '../Styles/Background.module.css'
-const CourseCard = ({ item }) => {
+const CourseCard = ({ item, handleSelect }) => {
   const { courseImg, courseName, description, coursePrice, credit } = item;
   const boxShadowStyle = {
     boxShadow:
@@ -17,7 +17,7 @@ const CourseCard = ({ item }) => {
         >
           <figure>
             <img
-              className="w-full h-full border border-blue-950"
+              className="w-full max-w-full h-full border border-blue-950"
               src={courseImg}
               alt="Course Images"
             />
@@ -28,18 +28,21 @@ const CourseCard = ({ item }) => {
               <div className="badge  ">NEW</div>
             </h2>
             <p className="text-gray-200">{description}</p>
-            <div className="flex justify-between items-center">
-              <div className="flex items-center justify-center gap-2">
+            <div className="flex justify-between items-center gap-2">
+              <div className="flex items-center justify-center gap-1">
                 <AiFillDollarCircle />
-                <p className="text-[18px] text-gray-200">Price :</p>
+                <p className="text-[16px] text-gray-200">Price : {coursePrice}</p>
               </div>
-              <div className="flex items-center justify-center text-center gap-2">
+              <div className="flex items-center justify-center text-center gap-1 ">
                 <IoBookSharp />
-                <p className="text-[18px] text-gray-200">Credit :</p>
+                <p className="text-[16px] text-gray-200">Credit : {credit}</p>
               </div>
             </div>
             <div>
-              <button className="btn btn-primary btn-sm btn-block mt-5 mx-auto">
+              <button
+                onClick={()=> handleSelect(item)}
+                className="btn btn-primary btn-sm btn-block mt-5 mx-auto"
+              >
                 Select
               </button>
             </div>

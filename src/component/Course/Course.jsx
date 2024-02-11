@@ -3,13 +3,25 @@ import CourseCard from "./CourseCard";
 import style from "../Styles/Background.module.css";
 const Course = () => {
   const [course, setCourse] = useState([]);
+  const [itemSelect,setItemSelect] = useState([])
+  const [itemPrice,setItemPrice] = useState(0)
 
   useEffect(() => {
     fetch("courseRegistation.json")
       .then((res) => res.json())
       .then((data) => setCourse(data));
   }, []);
+   
+  const handleSelect = (item) => {
+    const selectData = [...itemSelect,item]
+     setItemSelect(selectData)
 
+      const coursePrice = item.coursePrice;
+      setItemPrice(itemPrice + coursePrice)
+  }
+
+
+ 
    const boxShadowStyle = {
      boxShadow:
        "0 0 .1rem #fff, 0 0 .1rem #fff, 0 0 0.2rem #bc13fe, 0 0 0.2rem #bc13fe, 0 0 0.5rem #bc13fe, inset 0 0 0.1rem #bc13fe",
@@ -26,7 +38,7 @@ const Course = () => {
         <div className="grid grid-cols-1 px-5 sm:grid-cols-2 md:grid-cols-3 gap-7">
           {course.map((item) => (
             <div key={item.id}>
-              <CourseCard item={item}></CourseCard>
+              <CourseCard handleSelect={handleSelect} item={item}></CourseCard>
             </div>
           ))}
         </div>
@@ -36,15 +48,20 @@ const Course = () => {
               Credit Our remaining hr
             </h1>
             <hr />
-            <div className="my-5">
+            <div className="my-5 px-5">
               <h2 className="text-[20px] font-semibold text-white">
                 Course Name
               </h2>
-              <ol className="list-decimal px-5 mt-4 py-3 text-white"></ol>
+              <ol className="mt-3  text-white"></ol>
+              {itemSelect.map((item) => (
+                <li className="list-decimal text-[16px] " key={item.id}>
+                  {item.courseName}
+                </li>
+              ))}
               <hr />
               <h3 className="py-4 text-white">Total Credit Hour : hr</h3>
               <hr />
-              <h3 className="py-4 text-white">Total Price : USDT</h3>
+              <h3 className="py-4 text-white">Total Price : {itemPrice}</h3>
             </div>
           </div>
         </div>
