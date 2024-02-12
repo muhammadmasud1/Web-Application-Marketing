@@ -1,10 +1,15 @@
 import { useEffect, useState } from "react";
 import CourseCard from "./CourseCard";
 import style from "../Styles/Background.module.css";
+import Swal from "sweetalert2";
+ import { ToastContainer, toast } from "react-toastify";
+ import "react-toastify/dist/ReactToastify.css";
 const Course = () => {
   const [course, setCourse] = useState([]);
   const [itemSelect,setItemSelect] = useState([])
   const [itemPrice,setItemPrice] = useState(0)
+  const [credit ,setCreadit] = useState(0)
+  const [remainingCredit,setRemainingCredit] = useState(20)
 
   useEffect(() => {
     fetch("courseRegistation.json")
@@ -13,15 +18,40 @@ const Course = () => {
   }, []);
    
   const handleSelect = (item) => {
+    
+    const duplicateData = itemSelect.find(data => data.id === item.id)
+    if(duplicateData){
+      return Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Not Duplicate Course",
+      });
+    }
     const selectData = [...itemSelect,item]
      setItemSelect(selectData)
 
-      const coursePrice = item.coursePrice;
-      setItemPrice(itemPrice + coursePrice)
+      const totalCredit = parseFloat(item.credit);
+      const totalCreditHr = credit + totalCredit
+      setCreadit(totalCreditHr);
+      if(totalCreditHr > 20) {
+        return Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Your Credit Finished",
+          
+        });
+      }
+
+        const coursePrice = parseFloat(item.coursePrice);
+        setItemPrice(itemPrice + coursePrice);
+
+      const totalRemainingCredit = remainingCredit - totalCredit
+      setRemainingCredit(totalRemainingCredit)
+
+      
+
   }
 
-
- 
    const boxShadowStyle = {
      boxShadow:
        "0 0 .1rem #fff, 0 0 .1rem #fff, 0 0 0.2rem #bc13fe, 0 0 0.2rem #bc13fe, 0 0 0.5rem #bc13fe, inset 0 0 0.1rem #bc13fe",
@@ -45,7 +75,7 @@ const Course = () => {
         <div className="w-full  amountCard md:w-[60%] p-4 shadow-sm md:ml-4  ">
           <div style={boxShadowStyle} className="px-2 py-2 shadow-sm">
             <h1 className="text-[20px] font-bold mb-4 text-white">
-              Credit Our remaining hr
+              Credit Our remaining {remainingCredit} hr
             </h1>
             <hr />
             <div className="my-5 px-5">
@@ -59,7 +89,9 @@ const Course = () => {
                 </li>
               ))}
               <hr />
-              <h3 className="py-4 text-white">Total Credit Hour : hr</h3>
+              <h3 className="py-4 text-white">
+                Total Credit Hour : {credit}hr
+              </h3>
               <hr />
               <h3 className="py-4 text-white">Total Price : {itemPrice}</h3>
             </div>
