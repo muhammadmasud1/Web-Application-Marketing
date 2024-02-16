@@ -56,7 +56,7 @@ const Nav = () => {
                           </div>
                           <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-black rounded-box w-52"
+                            className="menu z-50 menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-black rounded-box w-52"
                           >
                             {nav?.map((item) => (
                               <li
@@ -69,7 +69,7 @@ const Nav = () => {
                           </ul>
                         </div>
                         <a className="btn btn-ghost text-xl">
-                          <Link to={'/'}>Web Application</Link>
+                          <Link to={"/"}>Web Application</Link>
                         </a>
                       </div>
                       <div className="navbar-center hidden lg:flex">
@@ -91,7 +91,7 @@ const Nav = () => {
                       </div>
                       <div className="navbar-end">
                         {user ? (
-                          <div className="dropdown dropdown-end">
+                          <div className="dropdown dropdown-end z-50">
                             <div
                               tabIndex={0}
                               role="button"

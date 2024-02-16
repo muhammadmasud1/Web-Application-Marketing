@@ -150,3 +150,9 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
             0 0 2.8rem #bc13fe,
             inset 0 0 1.3rem #bc13fe; 
 }
+
+.aboutbanner {
+  margin: 0;
+  background-color: #212121;
+  background-image: url("https://www.yudiz.com/codepen/photography-banner/frame.png");
+}
