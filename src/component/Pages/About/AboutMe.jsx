@@ -9,7 +9,7 @@ const AboutMe = () => {
                       <div>
                         <img
                           className="max-w-full object-cover rounded-md shadow-[5px_5px_0px_0px_rgba(224,255,255)]"
-                          src="../../../../images/aboutme.jpeg"
+                          src="https://i.ibb.co/TqVJ9Mq/output-image.jpg"
                           alt=""
                         />
                       </div>
