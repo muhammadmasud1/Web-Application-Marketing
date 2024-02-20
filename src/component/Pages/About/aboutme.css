@@ -1,0 +1,23 @@
+.tabs input:checked  {
+  border-color: red; /* Change border color to red */
+}
+
+@keyframes top-to-bottom {
+  from {
+    transform: translateY(-48px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Apply animation to h3 and p when clicked or hovered */
+.tabs input:checked + .tab-content{
+  animation: top-to-bottom 0.4s forwards;
+  letter-spacing: -.005em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  text-align: left;
+}
+
