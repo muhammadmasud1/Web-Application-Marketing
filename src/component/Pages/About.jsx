@@ -1,5 +1,6 @@
 import AboutBanner from "./About/AboutBanner";
 import AboutMe from "./About/AboutMe";
+import ContactForm from "./About/Contact";
 
 
 const About = () => {
@@ -9,6 +10,7 @@ const About = () => {
     <div>
       <AboutBanner></AboutBanner>
       <AboutMe></AboutMe>
+      <ContactForm></ContactForm>
     </div>
   );
 };

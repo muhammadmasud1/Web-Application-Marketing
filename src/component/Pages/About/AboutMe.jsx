@@ -18,11 +18,17 @@ const AboutMe = () => {
                           About Me
                         </h1>
                         <p className="my-5 text-xl text-white">
-                          There are many variations of passages of Lorem Ipsum
-                          available, but the majority have suffered alteration
-                          in some form, by injected humour, or randomised words
-                          which dont look even slightly believable. If you are
-                          going to use a passage of Lorem Ipsum,
+                          MD Masud Rana hails from Atwari, Panchagarh, Dhaka,
+                          Bangladesh, and serves as a Frontend Web Developer.
+                          With a year of experience, he excels in HTML, CSS,
+                          JavaScript, ReactJS, Firebase, Tailwind CSS, and
+                          Bootstrap 5. Passionate about crafting engaging user
+                          experiences, he leverages his skills to create dynamic
+                          and responsive web applications. With a keen eye for
+                          design and a dedication to staying updated with the
+                          latest technologies, MD Masud Rana strives to deliver
+                          high-quality solutions that meet both user needs and
+                          business objectives.
                         </p>
                         <div className="taps ">
                           <div role="tablist" className="tabs tabs-bordered">
@@ -126,7 +132,8 @@ const AboutMe = () => {
                                 2020-2024
                               </p>
                               <h3 className="text-[18px] text-bold hover:text-red-600">
-                                High School in Electical - Atwari Model Pilot High School
+                                High School in Electical - Atwari Model Pilot
+                                High School
                               </h3>
                               <p className="mb-4 text-[16px] text-slate-300  font-serif">
                                 2015-2020
